@@ -1,14 +1,15 @@
-var React = require('react');
+import React from 'react';
 import { Route , IndexRoute } from 'react-router';
 
 import Main from './views/main';
-import Home1 from './views/login/home1';
+import Home1 from './views/login/home1';//登录页面1
 
-var AppRoutes = (
+const AppRoutes = (
     <Route path="/" component={Main}>
         <IndexRoute component={Home1}/>
 
     </Route>
 );
 
-module.exports = AppRoutes;
+export default AppRoutes;
+// module.exports = AppRoutes;
