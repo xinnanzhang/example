@@ -17,7 +17,7 @@ class Home1 extends React.Component{
   }
 
   componentWillMount(){
-    alert();
+    
   }
 
   render() {
