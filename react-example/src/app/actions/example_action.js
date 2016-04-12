@@ -1,15 +1,6 @@
-// var oData = require('../server/odataVisio');
-// import oData from '../server/odataVisio';
+import exampleServices from '../services/example_services';
 
-export const LOADVISIOLIST = 'LOADVISIOLIST';//获取visio 数据
 export const SETTEXT = 'SETTEXT';//获取visio 数据
-
-export function loadVisioList(data) {
-    return {
-        type: LOADVISIOLIST,
-        data
-    }
-}
 
 export function setText(data) {
     return {
@@ -28,7 +19,7 @@ export function loadVisioList(){
 //内部调用
 function oDataLoadVisioList(){
   return dispatch => {
-    oData.loadVisioList(data => dispatch(isMytest(data)));
+    exampleServices.loadVisioList(data => dispatch(isMytest(data)));
       // hehehe(data => dispatch(xixixi(data)));
   }
 }
