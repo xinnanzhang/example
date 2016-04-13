@@ -1,19 +1,19 @@
 import { combineReducers } from 'redux'
 import {
-  SETTEXT
+  EXAMPLE
 } from '../actions/example_action'
 
-function loadVisioList(state = '', action) {
+function exampleText(state = '', action) {
     switch (action.type) {
-        case SETTEXT:
-          return action.data;
+        case EXAMPLE:
+        return action.data.status == "ok" ? "hehe":{};
         default:
           return state
     }
 }
 
 const exampleReducer = combineReducers({
-  loadVisioList
+  exampleText
 })
 
 export default exampleReducer

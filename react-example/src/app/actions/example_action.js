@@ -1,33 +1,33 @@
 import exampleServices from '../services/example_services';
 
-export const SETTEXT = 'SETTEXT';//获取visio 数据
+export const EXAMPLE = 'EXAMPLE';//获取visio 数据
 
-export function setText(data) {
+export function emitExample(data) {
     return {
-        type: SETTEXT,
+        type: EXAMPLE,
         data
     }
 }
 
 //外部调用
-export function loadVisioList(){
+export function getExample(){
   return dispatch => {
-    return dispatch(oDataLoadVisioList());
+    return dispatch(emitExample({status:"ok"}));
   }
 }
 
 //内部调用
-function oDataLoadVisioList(){
-  return dispatch => {
-    exampleServices.loadVisioList(data => dispatch(isMytest(data)));
-      // hehehe(data => dispatch(xixixi(data)));
-  }
-}
-
-function isMytest(data){
-  alert();
-  alert(data);
-  return dispatch => {
-    return dispatch(setText(data.result));
-  }
-}
+// function oDataLoadVisioList(){
+//   return dispatch => {
+//     exampleServices.loadVisioList(data => dispatch(isMytest(data)));
+//       // hehehe(data => dispatch(xixixi(data)));
+//   }
+// }
+//
+// function isMytest(data){
+//   alert();
+//   alert(data);
+//   return dispatch => {
+//     return dispatch(setText(data.result));
+//   }
+// }
