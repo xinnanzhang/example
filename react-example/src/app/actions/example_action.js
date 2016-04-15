@@ -27,6 +27,6 @@ export function emitAddExample(data) {
 export function addExample(obj){
   return dispatch => {
     dispatch(emitAddExample(exampleArray.push(obj)))
-    dispatch(queryExample());
+    // dispatch(queryExample());用来更新后台数据
   }
 }

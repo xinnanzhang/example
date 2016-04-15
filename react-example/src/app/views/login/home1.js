@@ -46,13 +46,12 @@ class Home1 extends React.Component{
         </div>
       )
     }
-
   }
 
   render() {
     return(
       <div>
-        欢迎来到登录界面{this.state.number}<a href="javascript:void(0);" onClick={this.handleTouchTap}>点击我</a>--------<a href="javasript:void(0);" onClick={this.reduxClick}>redux点击</a>
+        欢迎来到登录界面{this.state.number}<a href="javascript:void(0);" onClick={this.handleTouchTap}>点击我</a>
         <div>
           <a href="javasript:void(0);" onClick={this.addExample}>添加</a>
         </div>
