@@ -32,14 +32,13 @@ class Home1 extends React.Component{
   addExample(){
     const { dispatch } = this.props;
      dispatch(addExample({name:"zxn",age:"18"}));
-    //  dispatch(queryExample());
   }
 
   showExample(){
     let exampleList = this.props.queryExample;
     if(exampleList.length > 0){
       let showList= exampleList.map(function(obj,i){
-        return <div>姓名:{obj.name}-----年龄{obj.age}</div>
+        return <div key={i}>姓名:{obj.name}-----年龄{obj.age}</div>
       }.bind(this));
       return(
         <div>

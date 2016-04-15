@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from 'react-router';
+import ReactRouter ,{ Router, browserHistory } from 'react-router';
 
-import createHashHistory from 'history/lib/createHashHistory';
+// import createHashHistory from 'history/lib/createHashHistory';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Provider } from 'react-redux';
 import AppRoutes from './app-route.js';
@@ -17,7 +17,7 @@ var createComponent = (Component, props) => {
 
 ReactDOM.render(
   <Provider store={store}>
-      <Router history={createHashHistory({queryKey: false})} createElement={createComponent}>
+      <Router history={browserHistory} createElement={createComponent}>
           {AppRoutes}
       </Router>
   </Provider>, document.getElementById('app')
