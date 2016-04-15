@@ -1,20 +1,9 @@
 import { combineReducers } from 'redux'
 import {
-  EXAMPLE,
   ADDEXAMPLE,
   QUERYEXAMPLE
 } from '../actions/example_action'
 
-var exampleArray = [];
-
-function exampleText(state = '', action) {
-    switch (action.type) {
-        case EXAMPLE:
-        return action.data.status == "ok" ? "hehe":{};
-        default:
-          return state
-    }
-}
 function addExample(state = [], action) {
     switch (action.type) {
         case ADDEXAMPLE:
@@ -34,7 +23,6 @@ function queryExample(state = [], action) {
 }
 
 const exampleReducer = combineReducers({
-  exampleText,
   addExample,
   queryExample
 })

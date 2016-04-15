@@ -16,20 +16,6 @@ export function queryExample(){
   }
 }
 
-export const EXAMPLE = 'EXAMPLE';//获取visio 数据
-export function emitExample(data) {
-    return {
-        type: EXAMPLE,
-        data
-    }
-}
-//外部调用
-export function getExample(){
-  return dispatch => {
-    return dispatch(emitExample({status:"ok"}));
-  }
-}
-
 //添加
 export const ADDEXAMPLE = 'ADDEXAMPLE';//获取visio 数据
 export function emitAddExample(data) {

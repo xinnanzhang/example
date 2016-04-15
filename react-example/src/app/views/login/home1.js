@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { getExample,addExample,queryExample } from '../../actions/example_action';
+import { addExample,queryExample } from '../../actions/example_action';
 
 class Home1 extends React.Component{
 
@@ -51,8 +51,6 @@ class Home1 extends React.Component{
   }
 
   render() {
-    // var exampleText = this.props.exampleText;
-    // console.log(exampleText);
     return(
       <div>
         欢迎来到登录界面{this.state.number}<a href="javascript:void(0);" onClick={this.handleTouchTap}>点击我</a>--------<a href="javasript:void(0);" onClick={this.reduxClick}>redux点击</a>
@@ -68,10 +66,9 @@ class Home1 extends React.Component{
 }
 
 function mapDepartIndexState(state) {
-  const { exampleText,addExample,queryExample } = state.exampleReducer
+  const { addExample,queryExample } = state.exampleReducer
 
   return {
-    exampleText:exampleText,
     addExample:addExample,
     queryExample:queryExample
   }
