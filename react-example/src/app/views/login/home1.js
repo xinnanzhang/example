@@ -2,16 +2,13 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { addExample,queryExample } from '../../actions/example_action';
+import { queryExample,addExample,deleteExample } from '../../actions/example_action';
 
 class Home1 extends React.Component{
 
   constructor(props, context) {
     super(props, context);
-    this.handleTouchTap = this.handleTouchTap.bind(this);
-    this.reduxClick = this.reduxClick.bind(this);
-    this.addExample = this.addExample.bind(this);
-    this.showExample = this.showExample.bind(this);
+    this.addExample = this.addExample.bind(this);//构造函数里面绑定
     this.state = {
       number: 0,
     };
@@ -25,20 +22,20 @@ class Home1 extends React.Component{
      dispatch(queryExample());
   }
 
-  reduxClick(){
-
-  }
-
   addExample(){
     const { dispatch } = this.props;
-     dispatch(addExample({name:"zxn",age:"18"}));
+    dispatch(addExample({name:"zxn",age:"18"}));
+  }
+  deleteExample(id){
+    const { dispatch } = this.props;
+    dispatch(deleteExample(id));
   }
 
   showExample(){
     let exampleList = this.props.queryExample;
     if(exampleList.length > 0){
       let showList= exampleList.map(function(obj,i){
-        return <div key={i}>姓名:{obj.name}-----年龄{obj.age}</div>
+        return <div style={{backgroundColor:"#690",marginTop:"5"}} key={i} onClick={this.deleteExample.bind(this,i)}>姓名:{obj.name}-----年龄{obj.age}</div>
       }.bind(this));
       return(
         <div>
@@ -51,7 +48,7 @@ class Home1 extends React.Component{
   render() {
     return(
       <div>
-        欢迎来到登录界面{this.state.number}<a href="javascript:void(0);" onClick={this.handleTouchTap}>点击我</a>
+        欢迎来到登录界面{this.state.number}<a href="javascript:void(0);" onClick={this.handleTouchTap.bind(this)}>点击我</a>
         <div>
           <a href="javasript:void(0);" onClick={this.addExample}>添加</a>
         </div>
@@ -72,5 +69,3 @@ function mapDepartIndexState(state) {
   }
 }
 export default connect(mapDepartIndexState)(Home1)
-
-// export default Home1;

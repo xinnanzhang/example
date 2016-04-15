@@ -30,3 +30,28 @@ export function addExample(obj){
     // dispatch(queryExample());用来更新后台数据
   }
 }
+
+//删除
+export const DELETEEXAMPLE = 'DELETEEXAMPLE';//获取visio 数据
+export function emitDeleteExample(data) {
+    return {
+        type: DELETEEXAMPLE,
+        data
+    }
+}
+export function deleteExample(id){
+  return dispatch => {
+      let newArray = [];
+     for(var i = 0;i< exampleArray.length;i++){
+       if(i == id){
+         continue;
+       }
+       newArray.push(exampleArray[i]);
+     }
+     console.log(newArray);
+    // dispatch(
+      // Array.remove(exampleArray,id)
+    // )
+    // dispatch(queryExample());用来更新后台数据
+  }
+}
