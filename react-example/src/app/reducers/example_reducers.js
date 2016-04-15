@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux'
 import {
-  EXAMPLE
+  EXAMPLE,
+  ADDEXAMPLE,
+  QUERYEXAMPLE
 } from '../actions/example_action'
+
+var exampleArray = [];
 
 function exampleText(state = '', action) {
     switch (action.type) {
@@ -11,9 +15,28 @@ function exampleText(state = '', action) {
           return state
     }
 }
+function addExample(state = [], action) {
+    switch (action.type) {
+        case ADDEXAMPLE:
+          return action.data;
+        default:
+          return state
+    }
+}
+//查询更新数据
+function queryExample(state = [], action) {
+    switch (action.type) {
+        case QUERYEXAMPLE:
+          return action.data;
+        default:
+          return state
+    }
+}
 
 const exampleReducer = combineReducers({
-  exampleText
+  exampleText,
+  addExample,
+  queryExample
 })
 
 export default exampleReducer
