@@ -1,3 +1,4 @@
+require('./extend');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactRouter ,{ Router, browserHistory } from 'react-router';
@@ -7,6 +8,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Provider } from 'react-redux';
 import AppRoutes from './app-route.js';
 import configureStore from './configureStore';
+
 
 injectTapEventPlugin();
 
